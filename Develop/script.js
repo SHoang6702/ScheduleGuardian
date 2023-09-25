@@ -1,15 +1,7 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-let hourNine = document.getElementById('hour-9');
-let hourTen = document.getElementById('hour-10');
-let hourEleven = document.getElementById('hour-11');
-let hourTwelve = document.getElementById('hour-12');
-let hourThirteen = document.getElementById('hour-13');
-let hourFourteen = document.getElementById('hour-14');
-let hourFifteen = document.getElementById('hour-15');
-let hourSixteen = document.getElementById('hour-16');
-let hourSeventeen = document.getElementById('hour-17');
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -93,7 +85,34 @@ let btn17 = document.getElementById('btn-17');
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
-  
+let hour9 = document.getElementById('hour-9');
+let hour10 = document.getElementById('hour-10');
+let hour11 = document.getElementById('hour-11');
+let hour12 = document.getElementById('hour-12');
+let hour13 = document.getElementById('hour-13');
+let hour14 = document.getElementById('hour-14');
+let hour15 = document.getElementById('hour-15');
+let hour16 = document.getElementById('hour-16');
+let hour17 = document.getElementById('hour-17');
+
+let currentHour = dayjs().format('HH')
+console.log(currentHour)
+function timeStatus9() {
+  if (currentHour >= 9 && currentHour < 10) {
+    hourNine.classList.add('past');
+    hourNine.classList.remove('future');
+    hourNine.classList.remove('present');
+  } else if (currentHour >= 10 && currentHour < 11) {
+    hourNine.classList.add('present');
+    hourNine.classList.remove('future');
+    hourNine.classList.remove('past');
+  } else if (currentHour >= 11 && currentHour < 12) {
+    hourNine.classList.add('future');
+    hourNine.classList.remove('past');
+    hourNine.classList.remove('present');
+  }
+};
+timeStatus9();
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
@@ -119,7 +138,6 @@ let btn17 = document.getElementById('btn-17');
   };
   callText();
   // TODO: Add code to display the current date in the header of the page.
-  var currentTime = dayjs().format('hh:mm:ss a');
   var dateEl = dayjs();
   $('#currentDay').text(dateEl.format('MMM D, YYYY'))
 
