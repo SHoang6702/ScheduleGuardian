@@ -17,7 +17,7 @@ WHEN I scroll down
 THEN I am presented with timeblocks for standard business hours of 9am-5pm(Completed)
 
 WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future(WIP)
+THEN each timeblock is color coded to indicate whether it is in the past, present, or future(Completed)
 
 WHEN I click into a timeblock
 THEN I can enter an event(Completed)

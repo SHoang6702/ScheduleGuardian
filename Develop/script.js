@@ -85,34 +85,117 @@ let btn17 = document.getElementById('btn-17');
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
-let hour9 = document.getElementById('hour-9');
-let hour10 = document.getElementById('hour-10');
-let hour11 = document.getElementById('hour-11');
-let hour12 = document.getElementById('hour-12');
-let hour13 = document.getElementById('hour-13');
-let hour14 = document.getElementById('hour-14');
-let hour15 = document.getElementById('hour-15');
-let hour16 = document.getElementById('hour-16');
-let hour17 = document.getElementById('hour-17');
 
 let currentHour = dayjs().format('HH')
 console.log(currentHour)
 function timeStatus9() {
+  let hour9 = document.getElementById('hour-9');
   if (currentHour >= 9 && currentHour < 10) {
-    hourNine.classList.add('past');
-    hourNine.classList.remove('future');
-    hourNine.classList.remove('present');
-  } else if (currentHour >= 10 && currentHour < 11) {
-    hourNine.classList.add('present');
-    hourNine.classList.remove('future');
-    hourNine.classList.remove('past');
-  } else if (currentHour >= 11 && currentHour < 12) {
-    hourNine.classList.add('future');
-    hourNine.classList.remove('past');
-    hourNine.classList.remove('present');
+    hour9.classList.add('present');
+  } else if (currentHour > 9) {
+    hour9.classList.add('past');
+  } else if (currentHour < 10) {
+    hour9.classList.add('future');
   }
 };
 timeStatus9();
+
+function timeStatus10() {
+  let hour10 = document.getElementById('hour-10');
+  if (currentHour >= 10 && currentHour < 11) {
+    hour10.classList.add('present');
+  } else if (currentHour > 10) {
+    hour10.classList.add('past');
+  } else if (currentHour < 11) {
+    hour10.classList.add('future');
+  }
+};
+timeStatus10();
+
+function timeStatus11() {
+  let hour11 = document.getElementById('hour-11');
+  if (currentHour >= 11 && currentHour < 12) {
+    hour11.classList.add('present');
+  } else if (currentHour > 11) {
+    hour11.classList.add('past');
+  } else if (currentHour < 12) {
+    hour11.classList.add('future');
+  }
+};
+timeStatus11();
+
+function timeStatus12() {
+  let hour12 = document.getElementById('hour-12');
+  if (currentHour >= 12 && currentHour < 13) {
+    hour12.classList.add('present');
+  } else if (currentHour > 12) {
+    hour12.classList.add('past');
+  } else if (currentHour < 13) {
+    hour12.classList.add('future');
+  }
+};
+timeStatus12();
+
+function timeStatus13() {
+  let hour13 = document.getElementById('hour-13');
+  if (currentHour >= 13 && currentHour < 14) {
+    hour13.classList.add('present');
+  } else if (currentHour > 13) {
+    hour13.classList.add('past');
+  } else if (currentHour < 14) {
+    hour13.classList.add('future');
+  }
+};
+timeStatus13();
+
+function timeStatus14() {
+  let hour14 = document.getElementById('hour-14');
+  if (currentHour >= 14 && currentHour < 15) {
+    hour14.classList.add('present');
+  } else if (currentHour > 14) {
+    hour14.classList.add('past');
+  } else if (currentHour <15) {
+    hour14.classList.add('future');
+  }
+};
+timeStatus14();
+
+function timeStatus15() {
+  let hour15 = document.getElementById('hour-15');
+  if (currentHour >= 15 && currentHour < 16) {
+    hour15.classList.add('present');
+  } else if (currentHour > 15) {
+    hour15.classList.add('past');
+  } else if (currentHour < 16) {
+    hour15.classList.add('future');
+  }
+};
+timeStatus15();
+
+function timeStatus16() {
+  let hour16 = document.getElementById('hour-16');
+  if (currentHour >= 16 && currentHour < 17) {
+    hour16.classList.add('present');
+  } else if (currentHour > 16) {
+    hour16.classList.add('past');
+  } else if (currentHour < 17) {
+    hour16.classList.add('future');
+  }
+};
+timeStatus16();
+
+function timeStatus17() {
+  let hour17 = document.getElementById('hour-17');
+  if (currentHour >= 17 && currentHour < 18) {
+    hour17.classList.add('present');
+  } else if (currentHour > 17) {
+    hour17.classList.add('past');
+  } else if (currentHour < 18) {
+    hour17.classList.add('future');
+  }
+};
+timeStatus17();
+
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
@@ -139,7 +222,7 @@ timeStatus9();
   callText();
   // TODO: Add code to display the current date in the header of the page.
   var dateEl = dayjs();
-  $('#currentDay').text(dateEl.format('MMM D, YYYY'))
+  $('#currentDay').text(dateEl.format('dddd, MMMM D'))
 
 
 // past, present, and future
@@ -154,7 +237,7 @@ timeStatus9();
 // THEN I am presented with timeblocks for standard business hours of 9am&ndash;5pm (09:00-17:00) (Completed)
 
 // WHEN I view the timeblocks for that day
-// THEN each timeblock is color coded to indicate whether it is in the past, present, or future (WIP)
+// THEN each timeblock is color coded to indicate whether it is in the past, present, or future (Completed)
 
 // WHEN I click into a timeblock
 // THEN I can enter an event (Completed)
